@@ -1,116 +1,44 @@
-# Front-End Challenge 20201209
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
-## Introdução
+## Available Scripts
 
-Este é um desafio para testar seus conhecimentos de Front-end;
+In the project directory, you can run:
 
-O objetivo é avaliar a sua forma de estruturação e autonomia em decisões para construir algo escalável utilizando o Framework sugerido na vaga aplicada.
+### `yarn start`
 
-## Case
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-A empresa Pharma Inc, está trabalhando em um projeto em colaboração com sua base de clientes para facilitar a gestão e visualização da informação dos seus pacientes de maneira simples e objetiva em um Dashboard onde podem listar, filtrar e expandir os dados disponíveis.
-O seu objetivo nesse projeto, é trabalhar no desenvolvimento do Front end que consumirá a API da empresa Pharma Inc seguindo os requisitos propostos neste desafio.
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-## Recursos
+### `yarn test`
 
-1. Estudar a documentação da REST API: https://randomuser.me/documentation
-2. Utilizar Frameworks CSS, recomendamos alguns como:
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-      - Tailwind CSS: https://tailwindcss.com/
-      - Material UI: https://material-ui.com/
-      - Angular Material: https://material.angular.io/
-      - Bootstrap: https://getbootstrap.com/
-      - Bulma: https://bulma.io/
+### `yarn build`
 
-3. Trabalhar em um [FORK](https://lab.coodesh.com/help/gitlab-basics/fork-project.md) deste repositório em seu usuário;
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-## Lista de Pacientes
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-A tela inicial do projeto será um lista de pacientes que deverá conter um buscador para facilitar filtrar todos os que são exibidos na lista, proposta:
+### `yarn eject`
 
-![List users](assets/list.png)
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-Para obter os dados, utilizaremos a API do Random User:
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-- https://randomuser.me/api/
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-Exemplo da resposta:
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-```json
-{
-   "results": [
-       {
-           "gender": "female",
-           "name": {
-               "title": "Ms",
-               "first": "Alea",
-               "last": "Christoffersen"
-           }
-       }
-   ],
-   "info": {
-       "seed": "2f10116f1799d353",
-       "results": 1,
-       "page": 1,
-       "version": "1.3"
-   }
-}
-```
+## Learn More
 
-Além de realizar a request, devemos aplicar alguns filtros na API:
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-- Limitar em 50 resultados por request
-- Adicionar o parâmetro de paginação para controlar o `Loading more`
-
-### Visualizar paciente
-
-Na coluna de ações da tabela, existe o botão visualizar para expandir os dados dos pacientes. Seguir o modelo proposto:
-
-![View user](assets/view.png)
-
-Devemos exibir os seguintes campos do paciente:
-
-- Imagem
-- Nome completo
-- Email
-- Gênero
-- Data de nascimento
-- Telefone
-- Nacionalidade
-- Endereço
-- ID (Número de identificação)
-
-## Extras
-
-Além do desafio proposto com as duas telas, temos alguns diferenciais:
-
-- **Diferencial 1** Adicionar um filtro por Gênero na tabela;
-- **Diferencial 2** Configurar o buscador para poder filtrar por nome e nacionalidade;
-- **Diferencial 3** Adicionar o paginador rota para facilitar compartilhar o link e manter a posição na lista;
-- **Diferencial 4** Escrever Unit tests da lista de pacientes;
-- **Diferencial 5** Configurar Docker no Projeto para facilitar o Deploy da equipe de DevOps;
-
-## Readme do Repositório
-
-- Deve conter o título do projeto
-- Uma descrição de uma frase
-- Como instalar e usar o projeto (instruções)
-- Não esqueça o [.gitignore](https://www.toptal.com/developers/gitignore)
-
-## Finalização
-
-Avisar sobre a finalização e enviar para correção em: [https://coodesh.com/review-challenge](https://coodesh.com/review-challenge)
-Após essa etapa será marcado a apresentação/correção do projeto.
-
-## Instruções para a Apresentação:
-
-1. Será necessário compartilhar a tela durante a vídeo chamada;
-2. Deixe todos os projetos de solução previamente abertos em seu computador antes de iniciar a chamada;
-3. Deixe os ambientes configurados e prontos para rodar;
-4. Prepara-se pois você será questionado sobre cada etapa e decisão do Challenge;
-5. Prepare uma lista de perguntas, dúvidas, sugestões de melhorias e feedbacks (caso tenha).
-
-## Suporte
-
-Use o nosso canal no slack: http://bit.ly/32CuOMy para tirar dúvidas sobre o processo ou envie um e-mail para contato@coodesh.com.
+To learn React, check out the [React documentation](https://reactjs.org/).
