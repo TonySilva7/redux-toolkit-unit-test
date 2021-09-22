@@ -6,9 +6,9 @@ export const Wrapper = styled.div`
 	align-items: center;
 	justify-content: space-between;
 
-	padding: 0 1rem 0 2rem;
-	width: 225px;
-	height: 71px;
+	padding: 0 0.2rem 0 2rem;
+	width: 18rem;
+	height: 5.5rem;
 
 	color: var(--blue-dark);
 	background: var(--bg-transparent);
