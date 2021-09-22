@@ -7,7 +7,7 @@ export const HeaderWrapper = styled.header`
 
 	height: 9rem;
 	width: 100%;
-	background: rgba(255, 255, 255, 0.31);
+	background: var(--bg-transparent);
 	box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.03);
 
 	& > div {

@@ -9,6 +9,8 @@ export const GlobalStyle = createGlobalStyle`
     --blue-dark: #568FBC;
     --blue-light: #8BCBE1;
     --white-logo: #E2F1F4;
+
+    --bg-transparent: rgba(255, 255, 255, .33);
   }  
 
   * {
@@ -26,11 +28,6 @@ export const GlobalStyle = createGlobalStyle`
         sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-
-
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(123.37deg, #52CFC9 -5.16%, #9CA2F4 77.06%);
     }
 
     ul {
