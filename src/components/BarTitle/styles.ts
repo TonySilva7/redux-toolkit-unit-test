@@ -1,4 +1,4 @@
-import { SupervisedUserCircleRounded } from '@material-ui/icons';
+import SupervisedUserCircleRoundedIcon from '@mui/icons-material/SupervisedUserCircleRounded';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
 	border-radius: 0 5rem 5rem 0;
 `;
 
-export const People = styled(SupervisedUserCircleRounded)`
+export const People = styled(SupervisedUserCircleRoundedIcon)`
 	height: 5.5rem;
 	width: 5.5rem;
 	fill: var(--white-logo);

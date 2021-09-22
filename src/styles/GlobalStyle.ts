@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     --white-logo: #E2F1F4;
 
     --bg-transparent: rgba(255, 255, 255, .33);
+    --shadow: 0 0.4rem 0.5rem rgba(0, 0, 0, 0.03);
   }  
 
   * {

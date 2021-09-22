@@ -1,13 +1,14 @@
 // import { StylesProvider } from '@material-ui/core';
 import { StyledEngineProvider } from '@mui/styled-engine';
-import { People, Wrapper } from './styles';
+import { Heart, Wrapper } from './styles';
 
-export default function BarTitle() {
+export default function Footer() {
 	return (
 		<Wrapper>
-			<h1>Usuários</h1>
 			<StyledEngineProvider injectFirst>
-				<People />
+				<small>
+					Desenvolvido com <Heart /> por Tony Silva
+				</small>
 			</StyledEngineProvider>
 		</Wrapper>
 	);
