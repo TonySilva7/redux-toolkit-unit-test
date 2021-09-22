@@ -1,7 +1,7 @@
 import BarTitle from '../BarTitle';
 import Footer from '../Footer';
 import Header from '../Header';
-import SearchBar from '../SearchBar';
+import MainContent from '../MainContent';
 import { Wrapper } from './styles';
 
 export default function Main() {
@@ -9,7 +9,7 @@ export default function Main() {
 		<Wrapper>
 			<Header />
 			<BarTitle />
-			<SearchBar />
+			<MainContent />
 			<Footer />
 		</Wrapper>
 	);
