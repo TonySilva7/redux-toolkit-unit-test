@@ -2,7 +2,7 @@
 import { StyledEngineProvider } from '@mui/styled-engine';
 import { People, Wrapper } from './styles';
 
-export default function BarTitle() {
+export default function TitleBar() {
 	return (
 		<Wrapper>
 			<h1>Usuários</h1>
