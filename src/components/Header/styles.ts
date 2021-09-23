@@ -5,6 +5,7 @@ export const HeaderWrapper = styled.header`
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
+	grid-area: 'header';
 
 	height: 8rem;
 	width: 100%;
@@ -53,8 +54,8 @@ export const HeaderWrapper = styled.header`
 
 export const MyButton = styled(Button)`
 	color: var(--purple-logo);
-	font-size: 1.2rem;
+	text-transform: initial;
+	font-size: 1.3rem;
 	padding: 0.1rem;
 	width: 2rem;
-	margin-top: 0.5rem;
 `;

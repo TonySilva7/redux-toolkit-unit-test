@@ -5,12 +5,13 @@ export const Wrapper = styled.article`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* justify-content: center; */
-	align-self: center;
-	padding: 2rem;
+	justify-self: center;
+	grid-area: 'main';
 
-	width: 97%;
-	height: 52rem;
+	padding: 2rem;
+	/* width: 97%; */
+	height: 100%;
+	/* height: 100rem; */
 
 	background: rgba(255, 255, 255, 0.7);
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
@@ -29,7 +30,8 @@ export const ReloadButton = styled(Button)`
 	border-radius: 5rem;
 	width: 15rem;
 	height: 4rem;
-	font-size: 1.5rem;
+	font-size: 1.4rem;
+	text-transform: initial;
 	color: var(--white-logo);
 	box-shadow: 0 0.4rem 0.5rem rgba(0, 0, 0, 0.1);
 	background: linear-gradient(90deg, #72dbd6 9.26%, #9bc2e7 93.12%);

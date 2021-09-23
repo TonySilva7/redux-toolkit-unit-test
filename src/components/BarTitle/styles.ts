@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	grid-area: 'bar-title';
 
 	padding: 0 0.2rem 0 2rem;
 	width: 18rem;

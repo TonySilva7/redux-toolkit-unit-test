@@ -17,7 +17,7 @@ export default function Main() {
 
 			<StyledEngineProvider injectFirst>
 				<ReloadButton variant='contained' startIcon={<ReplayRoundedIcon />}>
-					Send
+					Load More
 				</ReloadButton>
 			</StyledEngineProvider>
 		</Wrapper>

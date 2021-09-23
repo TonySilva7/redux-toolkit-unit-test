@@ -5,7 +5,8 @@ export const Wrapper = styled.footer`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	position: absolute;
+	grid-area: 'footer';
+	/* position: absolute; */
 	/* position: fixed; */
 
 	bottom: 0;
