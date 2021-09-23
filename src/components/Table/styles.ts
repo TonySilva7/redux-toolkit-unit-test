@@ -62,13 +62,13 @@ export const Wrapper = styled.table`
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			padding: 1rem;
+			padding: 0.7rem;
 			box-sizing: border-box;
 			transition: all 300ms ease;
 
 			&:hover {
-				/* transform: scale(1.01); */
-				background-color: var(--white-logo);
+				padding: 1rem;
+				box-shadow: var(--shadow);
 			}
 
 			& > td {
@@ -77,7 +77,6 @@ export const Wrapper = styled.table`
 				align-items: center;
 				justify-content: center;
 
-				padding: 0.5rem;
 				text-align: center;
 				font-size: 1.5rem;
 				color: var(--blue-dark);
