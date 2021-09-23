@@ -14,11 +14,7 @@ export default function SearchBar() {
 				<IconButton aria-label='menu'>
 					<FilterSearch />
 				</IconButton>
-				{/* <InputBase
-					sx={{ ml: 1, flex: 1 }}
-					placeholder='Digite os dados para sua busca'
-					inputProps={{ 'aria-label': 'search google maps' }}
-				/> */}
+
 				<MyInputBase
 					placeholder='Digite os dados para sua busca'
 					inputProps={{ 'aria-label': 'search users' }}
