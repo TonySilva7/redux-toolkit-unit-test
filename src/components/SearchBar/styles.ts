@@ -17,6 +17,28 @@ export const MyPaper = styled(Paper)<{ component: string }>`
 
 	width: 400px;
 	height: 4rem;
+
+	button {
+		transform: scale(0.9);
+
+		& > svg {
+			transition: all 300ms ease;
+		}
+
+		&:nth-child(3):hover {
+			background-color: var(--white-logo);
+			svg {
+				transform: rotate(90deg);
+			}
+		}
+
+		&:nth-child(1):hover {
+			background-color: rgba(156, 152, 244, 0.15);
+			svg {
+				transform: scaleY(1.3);
+			}
+		}
+	}
 `;
 
 export const MySearchIcon = styled(SearchIcon)`
@@ -35,8 +57,8 @@ export const MyInputBase = styled(InputBase)`
 
 	border-radius: 5rem;
 	padding: 0 1rem;
-	/* box-shadow: inset var(--shadow); */
+	box-shadow: inset var(--shadow);
 	font-size: 1.5rem;
 	color: var(--purple-dark);
-	background-color: rgba(238, 238, 238, 0.33);
+	/* background-color: rgba(238, 238, 238, 0.33); */
 `;

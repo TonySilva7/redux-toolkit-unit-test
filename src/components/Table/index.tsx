@@ -37,118 +37,6 @@ export default function Table() {
 			birth: 'sofy@mail.com',
 			actions: 'Ver Detalhes',
 		},
-		{
-			id: 1,
-			name: 'José Antonio Sousa Da Silva',
-			gender: 'tony',
-			birth: 'tony@mail.com',
-			actions: 'Ver Detalhes',
-		},
-		{
-			id: 2,
-			name: 'Naty',
-			gender: 'naty',
-			birth: 'naty@mail.com',
-			actions: 'Ver Detalhes',
-		},
-		{
-			id: 3,
-			name: 'Boby',
-			gender: 'boby',
-			birth: 'boby@mail.com',
-			actions: 'Ver Detalhes',
-		},
-		{
-			id: 4,
-			name: 'Sofy',
-			gender: 'sofy',
-			birth: 'sofy@mail.com',
-			actions: 'Ver Detalhes',
-		},
-		{
-			id: 1,
-			name: 'José Antonio Sousa Da Silva',
-			gender: 'tony',
-			birth: 'tony@mail.com',
-			actions: 'Ver Detalhes',
-		},
-		{
-			id: 2,
-			name: 'Naty',
-			gender: 'naty',
-			birth: 'naty@mail.com',
-			actions: 'Ver Detalhes',
-		},
-		{
-			id: 3,
-			name: 'Boby',
-			gender: 'boby',
-			birth: 'boby@mail.com',
-			actions: 'Ver Detalhes',
-		},
-		{
-			id: 4,
-			name: 'Sofy',
-			gender: 'sofy',
-			birth: 'sofy@mail.com',
-			actions: 'Ver Detalhes',
-		},
-		{
-			id: 1,
-			name: 'José Antonio Sousa Da Silva',
-			gender: 'tony',
-			birth: 'tony@mail.com',
-			actions: 'Ver Detalhes',
-		},
-		{
-			id: 2,
-			name: 'Naty',
-			gender: 'naty',
-			birth: 'naty@mail.com',
-			actions: 'Ver Detalhes',
-		},
-		{
-			id: 3,
-			name: 'Boby',
-			gender: 'boby',
-			birth: 'boby@mail.com',
-			actions: 'Ver Detalhes',
-		},
-		{
-			id: 4,
-			name: 'Sofy',
-			gender: 'sofy',
-			birth: 'sofy@mail.com',
-			actions: 'Ver Detalhes',
-		},
-		{
-			id: 1,
-			name: 'José Antonio Sousa Da Silva',
-			gender: 'tony',
-			birth: 'tony@mail.com',
-			actions: 'Ver Detalhes',
-		},
-		{
-			id: 2,
-			name: 'Naty',
-			gender: 'naty',
-			birth: 'naty@mail.com',
-			actions: 'Ver Detalhes',
-		},
-		{
-			id: 3,
-			name: 'Boby',
-			gender: 'boby',
-			birth: 'boby@mail.com',
-			actions: 'Ver Detalhes',
-		},
-		{
-			id: 4,
-			name: 'Sofy',
-			gender: 'sofy',
-			birth: 'sofy@mail.com',
-			actions: 'Ver Detalhes',
-		},
 	];
 
 	return (
@@ -170,9 +58,9 @@ export default function Table() {
 							{/* {user.id.substr(0, 3) + '...' + user.id.substr(user.id.length - 3)} */}
 							{user.id}
 						</td>
-						<td data-label='Nome'>{user.name}</td>
-						<td data-label='UserName'>{user.gender}</td>
-						<td data-label='Email'>{user.birth}</td>
+						<td data-label='Name'>{user.name}</td>
+						<td data-label='Gender'>{user.gender}</td>
+						<td data-label='Birth'>{user.birth}</td>
 						<td data-label={user.actions}>
 							<button onClick={() => {}}>{/* <DeleteForeverRoundedIcon /> */}</button>
 						</td>

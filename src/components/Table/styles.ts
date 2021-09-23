@@ -63,6 +63,7 @@ export const Wrapper = styled.table`
 
 			&:hover {
 				/* transform: scale(1.01); */
+				background-color: var(--white-logo);
 			}
 
 			& > td {

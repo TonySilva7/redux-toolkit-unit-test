@@ -58,4 +58,9 @@ export const MyButton = styled(Button)`
 	font-size: 1.3rem;
 	padding: 0.1rem;
 	width: 2rem;
+	transition: all 300ms ease;
+
+	&:hover {
+		transform: scale(1.2);
+	}
 `;

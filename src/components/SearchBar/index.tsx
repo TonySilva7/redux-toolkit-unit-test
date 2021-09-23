@@ -11,7 +11,7 @@ export default function SearchBar() {
 				component='form'
 				// sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}
 			>
-				<IconButton sx={{ p: '10px' }} aria-label='menu'>
+				<IconButton aria-label='menu'>
 					<FilterSearch />
 				</IconButton>
 				{/* <InputBase
@@ -23,7 +23,7 @@ export default function SearchBar() {
 					placeholder='Digite os dados para sua busca'
 					inputProps={{ 'aria-label': 'search users' }}
 				/>
-				<IconButton type='submit' sx={{ p: '10px' }} aria-label='search'>
+				<IconButton type='submit' aria-label='search'>
 					<MySearchIcon />
 				</IconButton>
 				{/* <Divider sx={{ height: 28, m: 0.5 }} orientation='vertical' />
