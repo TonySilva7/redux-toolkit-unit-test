@@ -9,9 +9,11 @@ export const MyPaper = styled(Paper)<{ component: string }>`
 	align-items: center;
 	justify-content: center;
 	align-self: center;
+
+	margin-top: 5rem;
 	border-radius: 5rem;
 	box-shadow: var(--shadow);
-	background-color: var(--white-logo);
+	background-color: rgba(255, 255, 255, 0.8);
 
 	width: 400px;
 	height: 4rem;
@@ -31,7 +33,10 @@ export const MyInputBase = styled(InputBase)`
 	margin-left: 0.2rem;
 	flex: 1;
 
+	border-radius: 5rem;
+	padding: 0 1rem;
+	/* box-shadow: inset var(--shadow); */
 	font-size: 1.5rem;
 	color: var(--purple-dark);
-	background-color: var(--white-logo);
+	background-color: rgba(238, 238, 238, 0.33);
 `;

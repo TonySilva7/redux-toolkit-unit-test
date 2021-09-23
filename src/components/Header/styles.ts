@@ -53,6 +53,7 @@ export const HeaderWrapper = styled.header`
 
 export const MyButton = styled(Button)`
 	color: var(--purple-logo);
+	font-size: 1.2rem;
 	padding: 0.1rem;
 	width: 2rem;
 	margin-top: 0.5rem;
