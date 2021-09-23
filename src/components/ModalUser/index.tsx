@@ -17,7 +17,7 @@ export default function ModalUser({ enable }: ModalProps) {
 						<h1>João Grilo F. Silva</h1>
 					</div>
 					<StyledEngineProvider injectFirst>
-						<MyIconButton color='secondary' aria-label='add an alarm'>
+						<MyIconButton color='secondary' aria-label='close window'>
 							<CancelRoundedIcon />
 						</MyIconButton>
 					</StyledEngineProvider>

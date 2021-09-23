@@ -1,4 +1,6 @@
-import { Wrapper } from './styles';
+import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import { StyledEngineProvider } from '@mui/styled-engine';
+import { MyIconButton, Wrapper } from './styles';
 export interface UserProps {
 	id: number;
 	name: string;
@@ -62,6 +64,11 @@ export default function Table() {
 						<td data-label='Gender'>{user.gender}</td>
 						<td data-label='Birth'>{user.birth}</td>
 						<td data-label={user.actions}>
+							<StyledEngineProvider injectFirst>
+								<MyIconButton color='secondary' aria-label='close window'>
+									<SearchRoundedIcon />
+								</MyIconButton>
+							</StyledEngineProvider>
 							<button onClick={() => {}}>{/* <DeleteForeverRoundedIcon /> */}</button>
 						</td>
 					</tr>

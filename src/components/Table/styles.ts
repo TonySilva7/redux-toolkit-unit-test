@@ -1,3 +1,4 @@
+import { IconButton } from '@mui/material';
 import styled from 'styled-components';
 
 export const Wrapper = styled.table`
@@ -27,6 +28,10 @@ export const Wrapper = styled.table`
 
 			& > th {
 				&:nth-child(1) {
+					width: 11rem;
+				}
+
+				&:nth-child(5) {
 					width: 11rem;
 				}
 
@@ -85,18 +90,8 @@ export const Wrapper = styled.table`
 					font-weight: bold;
 				}
 
-				& > button {
-					padding: 5px;
-					margin-right: 5px;
-					align-items: center;
-					display: inline-block;
-					border-radius: 100%;
-					vertical-align: middle;
-					/* box-shadow: -2px 7px 9px -6px rgba(37, 36, 55, 0.4) inset; */
-
-					svg {
-						transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
-					}
+				&:nth-child(5) {
+					width: 8rem;
 				}
 			}
 		}
@@ -104,5 +99,19 @@ export const Wrapper = styled.table`
 	caption {
 		font-size: 1.5rem;
 		margin: 0.5rem 0 0.75rem;
+	}
+`;
+
+export const MyIconButton = styled(IconButton)`
+	svg {
+		fill: var(--purple-logo);
+		font-size: x-large;
+		transition: all 300ms ease;
+	}
+
+	&:hover {
+		svg {
+			transform: rotate(90deg);
+		}
 	}
 `;
