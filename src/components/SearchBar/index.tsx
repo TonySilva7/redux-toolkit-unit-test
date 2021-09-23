@@ -2,6 +2,7 @@
 import IconButton from '@mui/material/IconButton';
 // import InputBase from '@mui/material/InputBase';
 import { StyledEngineProvider } from '@mui/styled-engine';
+import FilterBar from '../FilterBar';
 import { FilterSearch, MyInputBase, MyPaper, MySearchIcon } from './styles';
 
 export default function SearchBar() {
@@ -22,11 +23,8 @@ export default function SearchBar() {
 				<IconButton type='submit' aria-label='search'>
 					<MySearchIcon />
 				</IconButton>
-				{/* <Divider sx={{ height: 28, m: 0.5 }} orientation='vertical' />
-			<IconButton color='primary' sx={{ p: '10px' }} aria-label='directions'>
-			<DirectionsIcon />
-		</IconButton> */}
 			</MyPaper>
+			<FilterBar />
 		</StyledEngineProvider>
 	);
 }
