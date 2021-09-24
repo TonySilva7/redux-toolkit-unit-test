@@ -1,45 +1,17 @@
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import { StyledEngineProvider } from '@mui/styled-engine';
+import { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { getUsers, selectUserName } from '../../features/users/userSlice';
 import { MyIconButton, Wrapper } from './styles';
-export interface UserProps {
-	id: number;
-	name: string;
-	gender: string;
-	birth: string;
-	actions: string;
-}
 
 export default function Table() {
-	const users: UserProps[] = [
-		{
-			id: 1,
-			name: 'José Antonio Sousa Da Silva',
-			gender: 'tony',
-			birth: 'tony@mail.com',
-			actions: 'Ver Detalhes',
-		},
-		{
-			id: 2,
-			name: 'Naty',
-			gender: 'naty',
-			birth: 'naty@mail.com',
-			actions: 'Ver Detalhes',
-		},
-		{
-			id: 3,
-			name: 'Boby',
-			gender: 'boby',
-			birth: 'boby@mail.com',
-			actions: 'Ver Detalhes',
-		},
-		{
-			id: 4,
-			name: 'Sofy',
-			gender: 'sofy',
-			birth: 'sofy@mail.com',
-			actions: 'Ver Detalhes',
-		},
-	];
+	const kkk = useAppSelector(selectUserName);
+	const dispatch = useAppDispatch();
+
+	useEffect(() => {
+		dispatch(getUsers(1));
+	}, [dispatch]);
 
 	return (
 		<Wrapper>
@@ -54,16 +26,18 @@ export default function Table() {
 			</thead>
 
 			<tbody>
-				{users.map((user) => (
-					<tr key={user.id}>
+				{kkk.map((user) => (
+					<tr key={user.login.uuid}>
 						<td data-label='Id'>
 							{/* {user.id.substr(0, 3) + '...' + user.id.substr(user.id.length - 3)} */}
-							{user.id}
+							{user.id.value}
 						</td>
-						<td data-label='Name'>{user.name}</td>
+						<td data-label='Name'>
+							{user.name.first} {user.name.last}
+						</td>
 						<td data-label='Gender'>{user.gender}</td>
-						<td data-label='Birth'>{user.birth}</td>
-						<td data-label={user.actions}>
+						<td data-label='Birth'>{user.dob.date}</td>
+						<td data-label='Actions'>
 							<StyledEngineProvider injectFirst>
 								<MyIconButton color='secondary' aria-label='close window'>
 									<SearchRoundedIcon />

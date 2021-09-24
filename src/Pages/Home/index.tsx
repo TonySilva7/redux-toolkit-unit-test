@@ -16,6 +16,7 @@ export default function Home(): JSX.Element {
 				<Header />
 				<BarTitle />
 				<Main />
+				{/* <Counter /> */}
 				<Footer />
 			</Wrapper>
 		</>

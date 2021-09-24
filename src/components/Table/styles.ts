@@ -29,6 +29,16 @@ export const Wrapper = styled.table`
 			& > th {
 				&:nth-child(1) {
 					width: 11rem;
+					margin-left: 4rem;
+				}
+
+				&:nth-child(2) {
+					margin-left: 4rem;
+				}
+
+				&:nth-child(3) {
+					margin-left: 1rem;
+					width: 11rem;
 				}
 
 				&:nth-child(5) {
@@ -75,18 +85,23 @@ export const Wrapper = styled.table`
 				display: flex;
 				width: 23.5rem;
 				align-items: center;
-				justify-content: center;
+				justify-content: flex-start;
+				padding-left: 2rem;
 
 				text-align: center;
 				font-size: 1.5rem;
 				color: var(--blue-dark);
 
 				&:nth-child(1) {
-					width: 9rem;
+					width: 18rem;
 				}
 
 				&:nth-child(2) {
 					font-weight: bold;
+				}
+
+				&:nth-child(3) {
+					width: 12rem;
 				}
 
 				&:nth-child(5) {
