@@ -3,13 +3,12 @@ import { StyledEngineProvider } from '@mui/styled-engine';
 import { Footer, Header, MyIconButton, Wrapper } from './styles';
 
 interface ModalProps {
-	enable: boolean;
+	isVisible: boolean;
 }
 
-export default function ModalUser({ enable }: ModalProps) {
-	console.log(enable);
+export default function ModalUser({ isVisible }: ModalProps) {
 	return (
-		<Wrapper display={enable}>
+		<Wrapper display={isVisible ? 'flex' : 'none'}>
 			<div>
 				<Header>
 					<div>

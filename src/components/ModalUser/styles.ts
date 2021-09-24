@@ -1,8 +1,8 @@
 import IconButton from '@mui/material/IconButton';
 import styled from 'styled-components';
 
-export const Wrapper = styled.section<{ display: boolean }>`
-	display: ${({ display }) => (display ? 'flex' : 'none')};
+export const Wrapper = styled.section<{ display: string }>`
+	display: ${({ display }) => display};
 	position: absolute;
 	align-items: center;
 	justify-content: center;

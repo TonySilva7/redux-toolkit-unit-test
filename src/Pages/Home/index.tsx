@@ -7,11 +7,11 @@ import BarTitle from '../../components/TitleBar';
 import { Wrapper } from './styles';
 
 export default function Home(): JSX.Element {
-	const [enable, setEnable] = useState<boolean>(false);
+	const [isVisible] = useState<boolean>(false);
 
 	return (
 		<>
-			<ModalUser enable={enable} />
+			<ModalUser isVisible={isVisible} />
 			<Wrapper>
 				<Header />
 				<BarTitle />
