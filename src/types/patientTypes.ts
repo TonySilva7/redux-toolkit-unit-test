@@ -40,7 +40,7 @@ type Picture = {
 	thumbnail: string;
 };
 
-export default interface IUser {
+export default interface IPatient {
 	gender: string;
 	name: Name;
 	location: Location;

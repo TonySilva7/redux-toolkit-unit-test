@@ -1,13 +1,13 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
-import IUser from '../../types/userTypes';
+import IPatient from '../../types/patientTypes';
 
-export interface UserState {
+export interface PatientState {
 	status: 'ok' | 'loading';
-	users: IUser[];
+	patients: IPatient[];
 }
 
-const usersInitial: IUser[] = [
+const patientsInitial: IPatient[] = [
 	{
 		gender: '',
 		name: { title: 'Tony', first: '', last: '' },
@@ -33,16 +33,16 @@ const usersInitial: IUser[] = [
 	},
 ];
 
-const initialState: UserState = {
+const initialState: PatientState = {
 	status: 'ok',
-	users: usersInitial,
+	patients: patientsInitial,
 };
 
-// MINHA FUNÇÃO
-export const getUsers = createAsyncThunk('user/fetchUser', async (numPage: number) => {
+// Faz requisição para API
+export const getPatients = createAsyncThunk('patient/fetchPatient', async (numPage: number) => {
 	const response = await fetch(`https://randomuser.me/api/?page=${numPage}&results=50&seed=tony`)
 		.then((res) => res.json())
-		.then((users) => users.results)
+		.then((patients) => patients.results)
 		.catch((e) => console.log(e));
 
 	console.log('THUNK', response);
@@ -50,18 +50,20 @@ export const getUsers = createAsyncThunk('user/fetchUser', async (numPage: numbe
 	return response;
 });
 
-export const counterSlice = createSlice({
+export const patientSlice = createSlice({
 	name: 'counter',
 	initialState,
 
-	reducers: {},
+	reducers: {
+		findByGender: (state, action) => {},
+	},
 
 	extraReducers: (builder) => {
 		builder
-			.addCase(getUsers.fulfilled, (state: UserState, action) => {
-				state.users = action.payload;
+			.addCase(getPatients.fulfilled, (state: PatientState, action) => {
+				state.patients = action.payload;
 			})
-			.addCase(getUsers.pending, (state: UserState, action) => {
+			.addCase(getPatients.pending, (state: PatientState, action) => {
 				state.status = 'loading';
 			});
 	},
@@ -69,6 +71,6 @@ export const counterSlice = createSlice({
 
 // export const { } = counterSlice.actions;
 
-export const selectUserName = (state: RootState) => state.users.users;
+export const selectPatients = (state: RootState) => state.patient.patients;
 
-export default counterSlice.reducer;
+export default patientSlice.reducer;

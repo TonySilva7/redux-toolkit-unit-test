@@ -1,4 +1,9 @@
-import counterReducer, { CounterState, decrement, increment, incrementByAmount } from './userSlice';
+import counterReducer, {
+	CounterState,
+	decrement,
+	increment,
+	incrementByAmount,
+} from './patientSlice';
 
 describe('counter reducer', () => {
 	const initialState: CounterState = {

@@ -2,15 +2,15 @@ import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import { StyledEngineProvider } from '@mui/styled-engine';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { getUsers, selectUserName } from '../../features/users/userSlice';
+import { getPatients, selectPatients } from '../../features/patients/patientSlice';
 import { MyIconButton, Wrapper } from './styles';
 
 export default function Table() {
-	const kkk = useAppSelector(selectUserName);
+	const users = useAppSelector(selectPatients);
 	const dispatch = useAppDispatch();
 
 	useEffect(() => {
-		dispatch(getUsers(1));
+		dispatch(getPatients(1));
 	}, [dispatch]);
 
 	return (
@@ -26,7 +26,7 @@ export default function Table() {
 			</thead>
 
 			<tbody>
-				{kkk.map((user) => (
+				{users.map((user) => (
 					<tr key={user.login.uuid}>
 						<td data-label='Id'>
 							{/* {user.id.substr(0, 3) + '...' + user.id.substr(user.id.length - 3)} */}

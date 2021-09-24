@@ -1,13 +1,11 @@
-import { Checkbox, MenuItem, Select, SelectChangeEvent } from '@mui/material';
+import { MenuItem, Radio, Select, SelectChangeEvent } from '@mui/material';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import RadioGroup from '@mui/material/RadioGroup';
-import { BaseSyntheticEvent } from 'hoist-non-react-statics/node_modules/@types/react';
-import * as React from 'react';
-import { useState } from 'react';
+import { BaseSyntheticEvent, useEffect, useState } from 'react';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { getPatients, selectPatients } from '../../features/patients/patientSlice';
 import { LabelNat, MyForm, Wrapper } from './styles';
-
-const names = ['BR', 'EN', 'JP', 'LGH', 'CH', 'PT', 'NG', 'UK'];
 
 interface FilterProps {
 	isVisible: boolean;
@@ -15,14 +13,25 @@ interface FilterProps {
 
 export default function FilterBar({ isVisible }: FilterProps) {
 	const [valueCountry, setValueCountry] = useState<string>('');
-	const [valueGender, setValueGender] = useState<string[]>([]);
+	const [valueGender, setValueGender] = useState<string>('');
+
+	const dispatch = useAppDispatch();
+	const patients = useAppSelector(selectPatients);
+
+	const [natList, setNatList] = useState<string[]>([]);
+
+	useEffect(() => {
+		const arr = patients.map((p) => p.nat);
+		const nat = arr.filter((n, i) => arr.indexOf(n) === i);
+		setNatList(nat);
+	}, [patients]);
 
 	function handleChangeCheck(event: BaseSyntheticEvent) {
 		const isChecked = event.target.checked;
 		const value = event.target.value;
-		isChecked
-			? setValueGender([...valueGender, value])
-			: setValueGender((prev) => prev.filter((e) => e !== value));
+		isChecked && setValueGender(() => value);
+
+		dispatch(getPatients(2));
 	}
 
 	function handleChangeSelect(event: SelectChangeEvent) {
@@ -38,13 +47,13 @@ export default function FilterBar({ isVisible }: FilterProps) {
 				<RadioGroup aria-label='gender' name='radio-buttons-group'>
 					<FormControlLabel
 						value='female'
-						control={<Checkbox />}
+						control={<Radio />}
 						label='Female'
 						onChange={handleChangeCheck}
 					/>
 					<FormControlLabel
 						value='male'
-						control={<Checkbox />}
+						control={<Radio />}
 						label='Male'
 						onChange={handleChangeCheck}
 					/>
@@ -58,9 +67,9 @@ export default function FilterBar({ isVisible }: FilterProps) {
 					onChange={handleChangeSelect}
 					input={<OutlinedInput label='Country' />}
 				>
-					{names.map((name) => (
-						<MenuItem key={name} value={name}>
-							{name}
+					{natList.map((nat) => (
+						<MenuItem key={nat} value={nat}>
+							{nat}
 						</MenuItem>
 					))}
 				</Select>
