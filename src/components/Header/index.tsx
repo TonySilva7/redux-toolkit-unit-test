@@ -14,7 +14,7 @@ export default function Header() {
 							Hello, <strong>Chaves</strong>
 						</p>
 						<StyledEngineProvider injectFirst>
-							<MyButton>Sair</MyButton>
+							<MyButton>Exit</MyButton>
 						</StyledEngineProvider>
 
 						{/* <button>sair</button> */}

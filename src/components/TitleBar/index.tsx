@@ -5,7 +5,7 @@ import { People, Wrapper } from './styles';
 export default function TitleBar() {
 	return (
 		<Wrapper>
-			<h1>Usuários</h1>
+			<h1>Users</h1>
 			<StyledEngineProvider injectFirst>
 				<People />
 			</StyledEngineProvider>

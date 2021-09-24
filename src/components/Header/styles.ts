@@ -57,6 +57,7 @@ export const MyButton = styled(Button)`
 	text-transform: initial;
 	font-size: 1.3rem;
 	padding: 0.1rem;
+	border-radius: 5rem;
 	width: 2rem;
 	transition: all 300ms ease;
 

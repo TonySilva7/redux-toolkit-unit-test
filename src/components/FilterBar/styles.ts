@@ -19,7 +19,7 @@ export const MyForm = styled(FormControl)<{ component: string }>`
 	color: var(--blue-dark);
 	flex-direction: row;
 
-	// radio
+	// checkbox
 	& > div:nth-child(1) {
 		flex-direction: row;
 		label {

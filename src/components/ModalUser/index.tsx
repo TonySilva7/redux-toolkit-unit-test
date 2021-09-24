@@ -13,7 +13,7 @@ export default function ModalUser({ isVisible }: ModalProps) {
 				<Header>
 					<div>
 						<img src='https://randomuser.me/api/portraits/men/61.jpg' alt='img' />
-						<h1>João Grilo F. Silva</h1>
+						<h1>João Grilo Ferreira da Silva</h1>
 					</div>
 					<StyledEngineProvider injectFirst>
 						<MyIconButton color='secondary' aria-label='close window'>
@@ -24,22 +24,25 @@ export default function ModalUser({ isVisible }: ModalProps) {
 
 				<Footer>
 					<p>
+						<strong>Email:</strong> joao@mail.com
+					</p>
+					<p>
+						<strong>Gender:</strong> Masucilno
+					</p>
+					<p>
+						<strong>Birth Date:</strong> 18/10/1980
+					</p>
+					<p>
+						<strong>Phone:</strong> 9-9999-9999
+					</p>
+					<p>
+						<strong>Nationality:</strong> Americana
+					</p>
+					<p>
+						<strong>Address:</strong> Rua 4, Slake Down - 45
+					</p>
+					<p>
 						<strong>Id:</strong> 002321
-					</p>
-					<p>
-						<strong>Gênero:</strong> Masucilno
-					</p>
-					<p>
-						<strong>Data de Nascimento:</strong> 18/10/1980
-					</p>
-					<p>
-						<strong>Telefone:</strong> 9-9999-9999
-					</p>
-					<p>
-						<strong>Nacionalidade:</strong> Americana
-					</p>
-					<p>
-						<strong>Endereço:</strong> Rua 4, Slake Down - 45
 					</p>
 				</Footer>
 			</div>
