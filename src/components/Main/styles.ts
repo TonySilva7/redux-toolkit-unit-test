@@ -9,28 +9,45 @@ export const Wrapper = styled.article`
 	grid-area: 'main';
 
 	padding: 2rem;
-	/* width: 97%; */
 	height: 100%;
-	/* height: 100rem; */
-
 	background: rgba(255, 255, 255, 0.7);
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
 	border-radius: 10px;
 
-	h1 {
+	& > h1 {
 		width: 40%;
 		font-weight: normal;
 		color: #466eb6;
 		text-align: center;
 	}
 
-	h2 {
+	& > span {
 		display: flex;
 		align-self: flex-start;
-		border-radius: 5rem;
-		padding: 0.3rem 2rem;
-		color: var(--purple-logo);
-		background: rgba(255, 255, 255, 0.7);
+		align-items: center;
+		justify-content: center;
+
+		button {
+			font-size: 3rem;
+			text-align: center;
+			font-weight: bold;
+			background: none;
+			color: var(--purple-logo);
+			cursor: pointer;
+			padding: 0 0.5rem;
+		}
+
+		h2 {
+			border-radius: 5rem;
+			padding: 0.3rem 2rem;
+			color: var(--purple-logo);
+			background: rgba(255, 255, 255, 0.7);
+		}
+	}
+
+	& > h3 {
+		font-size: 2rem;
+		color: #8aace9;
 	}
 `;
 

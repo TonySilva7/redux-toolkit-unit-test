@@ -2,8 +2,8 @@ import { Checkbox } from '@mui/material';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import RadioGroup from '@mui/material/RadioGroup';
 import { BaseSyntheticEvent, useState } from 'react';
-import { useAppDispatch } from '../../app/hooks';
-import { getPatients, ParamsUrl } from '../../features/patients/patientSlice';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { getPatients, ParamsUrl, selectInfo } from '../../features/patients/patientSlice';
 import { MyForm, Wrapper } from './styles';
 
 interface FilterProps {
@@ -14,6 +14,7 @@ interface FilterProps {
 
 export default function FilterBar({ isVisible, url, setUrl }: FilterProps) {
 	const dispatch = useAppDispatch();
+	const page = useAppSelector(selectInfo);
 
 	const [isCheckMale, setIsCheckMale] = useState<boolean>(false);
 	const [isCheckFemale, setIsCheckFemale] = useState<boolean>(false);
@@ -21,7 +22,7 @@ export default function FilterBar({ isVisible, url, setUrl }: FilterProps) {
 	function handleGender(event: BaseSyntheticEvent) {
 		const isChecked = event.target.checked;
 		const gender = isChecked ? event.target.value : '';
-		const obj = { ...url, gender: gender };
+		const obj = { ...url, page: page, gender: gender };
 
 		setUrl(obj);
 

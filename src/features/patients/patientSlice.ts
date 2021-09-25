@@ -104,5 +104,6 @@ export const selectPatients = (state: RootState) => state.patient.patients;
 export const selectInfo = (state: RootState) => state.patient.info.page;
 export const selectShowModal = (state: RootState) => state.patient.showModal;
 export const selectOnlyPatient = (state: RootState) => state.patient.clientModal;
+export const selectStatus = (state: RootState) => state.patient.status;
 
 export default patientSlice.reducer;
