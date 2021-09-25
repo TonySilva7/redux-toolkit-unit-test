@@ -56,7 +56,8 @@ export default function ModalUser() {
 					</p>
 
 					<p>
-						<strong>Address:</strong> {patients[idPatient].location.city}
+						<strong>Address:</strong> {patients[idPatient].location.street.name},{' '}
+						{patients[idPatient].location.street.number} - {patients[idPatient].location.city}
 					</p>
 					<p>
 						<strong>Id:</strong>{' '}
