@@ -6,7 +6,7 @@
 
 ---
 
-Faça o clone o do projeto usando `git clone <url-do-projeto>`.\
+Faça o clone do projeto usando `git clone <url-do-projeto>`.\
 Rode o comando abaixo para instalar as dependências.
 
 ```sh
