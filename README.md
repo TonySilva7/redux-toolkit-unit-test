@@ -1,6 +1,6 @@
 # Pharma Inc
 
-### Projeto destinado à facilitar o acesso a dados de pacientes.
+## Projeto destinado à facilitar o acesso a dados de pacientes.
 
 ### Baixando o projeto.
 
@@ -39,7 +39,7 @@ $ yarn test
 
 ---
 
-Para criar a build do projeto, rode o coamando:
+Para criar a build do projeto, rode o comando:
 
 ```sh
 $ yarn build
