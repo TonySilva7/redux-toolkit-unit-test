@@ -23,6 +23,15 @@ export const Wrapper = styled.article`
 		color: #466eb6;
 		text-align: center;
 	}
+
+	h2 {
+		display: flex;
+		align-self: flex-start;
+		border-radius: 5rem;
+		padding: 0.3rem 2rem;
+		color: var(--purple-logo);
+		background: rgba(255, 255, 255, 0.7);
+	}
 `;
 
 export const ReloadButton = styled(Button)`

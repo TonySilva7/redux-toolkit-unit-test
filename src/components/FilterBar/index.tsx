@@ -1,50 +1,33 @@
-import { Checkbox, MenuItem, Select, SelectChangeEvent } from '@mui/material';
+import { Checkbox } from '@mui/material';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import OutlinedInput from '@mui/material/OutlinedInput';
 import RadioGroup from '@mui/material/RadioGroup';
-import { BaseSyntheticEvent, useEffect, useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { getPatients, ParamsUrl, selectPatients } from '../../features/patients/patientSlice';
-import { LabelNat, MyForm, Wrapper } from './styles';
+import { BaseSyntheticEvent, useState } from 'react';
+import { useAppDispatch } from '../../app/hooks';
+import { getPatients, ParamsUrl } from '../../features/patients/patientSlice';
+import { MyForm, Wrapper } from './styles';
 
 interface FilterProps {
 	isVisible: boolean;
+	url: ParamsUrl;
+	setUrl: (obl: ParamsUrl) => void;
 }
 
-export default function FilterBar({ isVisible }: FilterProps) {
+export default function FilterBar({ isVisible, url, setUrl }: FilterProps) {
 	const dispatch = useAppDispatch();
-	const patients = useAppSelector(selectPatients);
 
-	const [valueCountry, setValueCountry] = useState<string>('');
 	const [isCheckMale, setIsCheckMale] = useState<boolean>(false);
 	const [isCheckFemale, setIsCheckFemale] = useState<boolean>(false);
-	const [natList, setNatList] = useState<string[]>([]);
-	const [paramsUrl, setParamsUrl] = useState<ParamsUrl>({ page: 1, gender: '', nat: '' });
-
-	useEffect(() => {
-		const arr = patients.map((p) => p.nat);
-		const nat = arr.filter((n, i) => arr.indexOf(n) === i);
-		setNatList(nat);
-	}, [patients]);
 
 	function handleGender(event: BaseSyntheticEvent) {
 		const isChecked = event.target.checked;
 		const gender = isChecked ? event.target.value : '';
-		const obj = { ...paramsUrl, gender: gender };
+		const obj = { ...url, gender: gender };
 
-		setParamsUrl(obj);
+		setUrl(obj);
 
 		gender === 'male' ? setIsCheckFemale(true) : setIsCheckFemale(false);
 		gender === 'female' ? setIsCheckMale(true) : setIsCheckMale(false);
 		dispatch(getPatients(obj));
-	}
-
-	function handleNationality(event: SelectChangeEvent) {
-		const nat = event.target.value;
-		setValueCountry(nat);
-
-		dispatch(getPatients({ ...paramsUrl, nat: nat }));
-		setNatList(patients.map((p) => p.nat));
 	}
 
 	return (
@@ -67,21 +50,6 @@ export default function FilterBar({ isVisible }: FilterProps) {
 						onChange={handleGender}
 					/>
 				</RadioGroup>
-
-				<LabelNat id='country'>Country</LabelNat>
-				<Select
-					id='country'
-					labelId='country'
-					value={valueCountry}
-					onChange={handleNationality}
-					input={<OutlinedInput label='Country' />}
-				>
-					{natList.map((nat) => (
-						<MenuItem key={nat} value={nat}>
-							{nat}
-						</MenuItem>
-					))}
-				</Select>
 			</MyForm>
 			{/* </StyledEngineProvider> */}
 		</Wrapper>

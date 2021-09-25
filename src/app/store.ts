@@ -1,9 +1,9 @@
 import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
-import counterReducer from '../features/patients/patientSlice';
+import patientReducer from '../features/patients/patientSlice';
 
 export const store = configureStore({
 	reducer: {
-		patient: counterReducer,
+		patient: patientReducer,
 	},
 });
 

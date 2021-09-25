@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.table`
 	border-collapse: collapse;
 	border: solid 1px var(--white-color);
-	margin-top: 3rem;
+	margin-top: 1rem;
 	padding: 0;
 	width: 100rem;
 	table-layout: fixed;
@@ -27,21 +27,30 @@ export const Wrapper = styled.table`
 			width: 100%;
 
 			& > th {
+				width: auto;
 				&:nth-child(1) {
-					width: 11rem;
-					margin-left: 4rem;
+					width: 13rem;
+					/* margin-left: 4rem; */
 				}
 
-				&:nth-child(2) {
+				&:nth-child(3) {
+					width: 12rem;
+				}
+
+				/*&:nth-child(2) {
 					margin-left: 4rem;
 				}
 
 				&:nth-child(3) {
 					margin-left: 1rem;
 					width: 11rem;
-				}
+				}*/
 
 				&:nth-child(5) {
+					width: 11rem;
+				}
+
+				&:nth-child(6) {
 					width: 11rem;
 				}
 
@@ -72,7 +81,7 @@ export const Wrapper = styled.table`
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			padding: 0.7rem;
+			/* padding: 0.7rem; */
 			box-sizing: border-box;
 			transition: all 300ms ease;
 
@@ -85,15 +94,14 @@ export const Wrapper = styled.table`
 				display: flex;
 				width: 23.5rem;
 				align-items: center;
-				justify-content: flex-start;
-				padding-left: 2rem;
+				justify-content: center;
 
-				text-align: center;
+				text-align: left;
 				font-size: 1.5rem;
 				color: var(--blue-dark);
 
 				&:nth-child(1) {
-					width: 18rem;
+					width: 13rem;
 				}
 
 				&:nth-child(2) {
@@ -104,8 +112,16 @@ export const Wrapper = styled.table`
 					width: 12rem;
 				}
 
+				&:nth-child(4) {
+					/* width: auto; */
+				}
+
 				&:nth-child(5) {
-					width: 8rem;
+					width: 12rem;
+				}
+
+				&:nth-child(6) {
+					width: 11rem;
 				}
 			}
 		}

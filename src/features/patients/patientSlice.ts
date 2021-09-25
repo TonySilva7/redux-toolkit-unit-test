@@ -4,7 +4,10 @@ import IPatient from '../../types/patientTypes';
 
 export interface PatientState {
 	status: 'ok' | 'loading';
+	showModal: boolean;
+	clientModal: number;
 	patients: IPatient[];
+	info: { seed: string; results: number; page: number; version: string };
 }
 
 export type ParamsUrl = {
@@ -41,37 +44,53 @@ const patientsInitial: IPatient[] = [
 
 const initialState: PatientState = {
 	status: 'ok',
+	showModal: false,
+	clientModal: 0,
 	patients: patientsInitial,
+	info: { seed: '', results: 0, page: 0, version: '' },
 };
 
 // Faz requisição para API
 export const getPatients = createAsyncThunk('patients/', async (obj: ParamsUrl) => {
-	const url = `https://randomuser.me/api/?gender=${obj.gender}&nat=${obj.nat}&page=${obj.page}&results=50`;
+	const nat = obj.nat.toLowerCase();
+	const gender = obj.gender.toLowerCase();
 
-	console.log(url);
+	const url = `https://randomuser.me/api/?gender=${gender}&nat=${nat}&page=${obj.page}&results=50`;
 
 	const response = await fetch(url)
 		.then((res) => res.json())
-		.then((patients) => patients.results)
+		// .then((patients) => patients.results)
+		.then((patients) => patients)
 		.catch((e) => console.log(e));
-
-	console.log('THUNK', response);
 
 	return response;
 });
 
 export const patientSlice = createSlice({
-	name: 'counter',
+	name: 'patient',
 	initialState,
 
 	reducers: {
-		findByGender: (state, action) => {},
+		findPatient: (state, action) => {
+			const data: string = action.payload;
+			const temPatients = state.patients.filter(
+				(patient) => patient.name.first.toLowerCase() === data
+			);
+			state.patients = temPatients;
+		},
+
+		handleModal: (state, action) => {
+			state.showModal = !state.showModal;
+			state.clientModal = action.payload;
+		},
 	},
 
 	extraReducers: (builder) => {
 		builder
 			.addCase(getPatients.fulfilled, (state: PatientState, action) => {
-				state.patients = action.payload;
+				state.patients = action.payload.results;
+				state.info = action.payload.info;
+				state.status = 'ok';
 			})
 			.addCase(getPatients.pending, (state: PatientState, action) => {
 				state.status = 'loading';
@@ -79,8 +98,11 @@ export const patientSlice = createSlice({
 	},
 });
 
-// export const { } = counterSlice.actions;
+export const { findPatient, handleModal } = patientSlice.actions;
 
 export const selectPatients = (state: RootState) => state.patient.patients;
+export const selectInfo = (state: RootState) => state.patient.info.page;
+export const selectShowModal = (state: RootState) => state.patient.showModal;
+export const selectOnlyPatient = (state: RootState) => state.patient.clientModal;
 
 export default patientSlice.reducer;

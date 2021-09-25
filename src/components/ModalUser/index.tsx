@@ -1,22 +1,38 @@
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 import { StyledEngineProvider } from '@mui/styled-engine';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import {
+	handleModal,
+	selectOnlyPatient,
+	selectPatients,
+	selectShowModal,
+} from '../../features/patients/patientSlice';
 import { Footer, Header, MyIconButton, Wrapper } from './styles';
 
-interface ModalProps {
-	isVisible: boolean;
-}
+export default function ModalUser() {
+	const showModal = useAppSelector(selectShowModal);
+	const idPatient = useAppSelector(selectOnlyPatient);
+	const patients = useAppSelector(selectPatients);
+	const dispatch = useAppDispatch();
 
-export default function ModalUser({ isVisible }: ModalProps) {
+	const urlImage = patients[idPatient].picture.large;
+	const altDesc = patients[idPatient].name.last;
+	const clientName = patients[idPatient].name.first.concat(' ', patients[idPatient].name.last);
+
 	return (
-		<Wrapper display={isVisible ? 'flex' : 'none'}>
+		<Wrapper display={showModal ? 'flex' : 'none'}>
 			<div>
 				<Header>
 					<div>
-						<img src='https://randomuser.me/api/portraits/men/61.jpg' alt='img' />
-						<h1>João Grilo Ferreira da Silva</h1>
+						<img src={urlImage} alt={altDesc} />
+						<h1>{clientName}</h1>
 					</div>
 					<StyledEngineProvider injectFirst>
-						<MyIconButton color='secondary' aria-label='close window'>
+						<MyIconButton
+							color='secondary'
+							aria-label='close window'
+							onClick={() => dispatch(handleModal(idPatient))}
+						>
 							<CancelRoundedIcon />
 						</MyIconButton>
 					</StyledEngineProvider>
@@ -24,25 +40,29 @@ export default function ModalUser({ isVisible }: ModalProps) {
 
 				<Footer>
 					<p>
-						<strong>Email:</strong> joao@mail.com
+						<strong>Email:</strong> {patients[idPatient].email}
 					</p>
 					<p>
-						<strong>Gender:</strong> Masucilno
+						<strong>Gender:</strong> {patients[idPatient].gender}
 					</p>
 					<p>
-						<strong>Birth Date:</strong> 18/10/1980
+						<strong>Birth Date:</strong> {patients[idPatient].dob.date.substr(0, 10)}
 					</p>
 					<p>
-						<strong>Phone:</strong> 9-9999-9999
+						<strong>Phone:</strong> {patients[idPatient].phone}
 					</p>
 					<p>
-						<strong>Nationality:</strong> Americana
+						<strong>Nationality:</strong> {patients[idPatient].nat}
+					</p>
+
+					<p>
+						<strong>Address:</strong> {patients[idPatient].location.city}
 					</p>
 					<p>
-						<strong>Address:</strong> Rua 4, Slake Down - 45
-					</p>
-					<p>
-						<strong>Id:</strong> 002321
+						<strong>Id:</strong>{' '}
+						{patients[idPatient].id.name.length === 0
+							? 'Patient without id'
+							: patients[idPatient].id.name}
 					</p>
 				</Footer>
 			</div>

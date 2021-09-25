@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.section<{ display: string }>`
 	display: ${({ display }) => display};
-	position: absolute;
+	position: fixed;
 	align-items: center;
 	justify-content: center;
 

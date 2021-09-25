@@ -8,6 +8,7 @@ export const Wrapper = styled.div<{ display: string }>`
 	align-items: center;
 	justify-content: center;
 
+	width: 33rem;
 	padding: 1rem 3rem;
 	background-color: #fff9;
 	border-radius: 0 0 0.7rem 0.7rem;
