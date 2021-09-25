@@ -10,7 +10,7 @@ export default function Table() {
 	const dispatch = useAppDispatch();
 
 	useEffect(() => {
-		dispatch(getPatients(1));
+		dispatch(getPatients({ page: 1, gender: '', nat: '' }));
 	}, [dispatch]);
 
 	return (

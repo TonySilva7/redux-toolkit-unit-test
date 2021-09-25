@@ -7,6 +7,12 @@ export interface PatientState {
 	patients: IPatient[];
 }
 
+export type ParamsUrl = {
+	page: number;
+	gender: string;
+	nat: string;
+};
+
 const patientsInitial: IPatient[] = [
 	{
 		gender: '',
@@ -39,8 +45,12 @@ const initialState: PatientState = {
 };
 
 // Faz requisição para API
-export const getPatients = createAsyncThunk('patient/fetchPatient', async (numPage: number) => {
-	const response = await fetch(`https://randomuser.me/api/?page=${numPage}&results=50&seed=tony`)
+export const getPatients = createAsyncThunk('patients/', async (obj: ParamsUrl) => {
+	const url = `https://randomuser.me/api/?gender=${obj.gender}&nat=${obj.nat}&page=${obj.page}&results=50`;
+
+	console.log(url);
+
+	const response = await fetch(url)
 		.then((res) => res.json())
 		.then((patients) => patients.results)
 		.catch((e) => console.log(e));
