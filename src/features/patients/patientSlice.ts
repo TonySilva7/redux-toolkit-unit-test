@@ -19,7 +19,7 @@ export type ParamsUrl = {
 const patientsInitial: IPatient[] = [
 	{
 		gender: '',
-		name: { title: 'Tony', first: '', last: '' },
+		name: { title: '', first: '', last: '' },
 		location: {
 			street: { number: 0, name: '' },
 			city: '',

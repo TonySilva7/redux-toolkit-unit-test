@@ -1,34 +1,22 @@
-import counterReducer, {
-	CounterState,
-	decrement,
-	increment,
-	incrementByAmount,
-} from './patientSlice';
+import { store } from '../../app/store';
+import { handleModal } from './patientSlice';
 
-describe('counter reducer', () => {
-	const initialState: CounterState = {
-		value: 3,
-		status: 'idle',
-	};
-	it('should handle initial state', () => {
-		expect(counterReducer(undefined, { type: 'unknown' })).toEqual({
-			value: 0,
-			status: 'idle',
-		});
+describe('patient reducer', () => {
+	let state = store.getState().patient;
+
+	it('should be ok', () => {
+		const status = state.status;
+		expect(status).toEqual('ok');
 	});
 
-	it('should handle increment', () => {
-		const actual = counterReducer(initialState, increment());
-		expect(actual.value).toEqual(4);
+	it('should return array of 1 elements', () => {
+		const patientArr = state.patients;
+		expect(patientArr.length).toEqual(1);
 	});
 
-	it('should handle decrement', () => {
-		const actual = counterReducer(initialState, decrement());
-		expect(actual.value).toEqual(2);
-	});
-
-	it('should handle incrementByAmount', () => {
-		const actual = counterReducer(initialState, incrementByAmount(2));
-		expect(actual.value).toEqual(5);
+	it('should be false', () => {
+		store.dispatch(handleModal(1));
+		const isVisible = state.showModal;
+		expect(isVisible).toBe(false);
 	});
 });

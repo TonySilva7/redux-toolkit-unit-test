@@ -39,8 +39,6 @@ export default function SearchBar() {
 		setUrl({ ...url, nat: value.toLowerCase() });
 	}
 
-	console.log(url);
-
 	return (
 		<StyledEngineProvider injectFirst>
 			<MyPaper component='form' onSubmit={handleSubmit}>
