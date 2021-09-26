@@ -60,5 +60,4 @@ export const MyInputBase = styled(InputBase)`
 	box-shadow: inset var(--shadow);
 	font-size: 1.5rem;
 	color: var(--purple-dark);
-	/* background-color: rgba(238, 238, 238, 0.33); */
 `;

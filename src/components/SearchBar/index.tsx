@@ -1,4 +1,3 @@
-// import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
 import { StyledEngineProvider } from '@mui/styled-engine';
 import { BaseSyntheticEvent } from 'hoist-non-react-statics/node_modules/@types/react';
@@ -10,7 +9,6 @@ import { FilterSearch, MyInputBase, MyPaper, MySearchIcon } from './styles';
 
 export default function SearchBar() {
 	const dispatch = useAppDispatch();
-	// const patients = useAppSelector(selectPatients);
 
 	const [isVisible, setIsVisible] = useState<boolean>(false);
 	const [url, setUrl] = useState<ParamsUrl>({ page: 1, gender: '', nat: '' });
@@ -26,12 +24,6 @@ export default function SearchBar() {
 		} else {
 			dispatch(findPatient(url.nat));
 		}
-
-		// url.nat.length > 2
-		// 	? dispatch(findPatient(url.nat))
-		// 	: url.nat.length === 0
-		// 	? alert()
-		// 	: dispatch(getPatients(url));
 	}
 
 	function handleChange(event: BaseSyntheticEvent) {

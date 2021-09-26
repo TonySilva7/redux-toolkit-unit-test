@@ -22,8 +22,6 @@ export default function Header() {
 						<StyledEngineProvider injectFirst>
 							<MyButton>Exit</MyButton>
 						</StyledEngineProvider>
-
-						{/* <button>sair</button> */}
 					</span>
 					<Profile />
 				</div>

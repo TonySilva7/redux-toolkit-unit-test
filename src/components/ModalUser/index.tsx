@@ -15,7 +15,7 @@ export default function ModalUser() {
 	const patients = useAppSelector(selectPatients);
 	const dispatch = useAppDispatch();
 
-	const urlImage = patients[idPatient].picture.large;
+	const urlImage = patients[idPatient].picture.large || '';
 	const altDesc = patients[idPatient].name.last;
 	const clientName = patients[idPatient].name.first.concat(' ', patients[idPatient].name.last);
 

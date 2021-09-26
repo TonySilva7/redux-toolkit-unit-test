@@ -1,4 +1,4 @@
-import { Checkbox } from '@mui/material';
+import { Checkbox, StyledEngineProvider } from '@mui/material';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import RadioGroup from '@mui/material/RadioGroup';
 import { BaseSyntheticEvent, useState } from 'react';
@@ -33,26 +33,26 @@ export default function FilterBar({ isVisible, url, setUrl }: FilterProps) {
 
 	return (
 		<Wrapper display={isVisible ? 'flex' : 'none'}>
-			{/* <StyledEngineProvider injectFirst> */}
-			<MyForm component='fieldset'>
-				<RadioGroup aria-label='gender' name='radio-buttons-group'>
-					<FormControlLabel
-						value='female'
-						control={<Checkbox />}
-						label='Female'
-						onChange={handleGender}
-						disabled={isCheckFemale}
-					/>
-					<FormControlLabel
-						value='male'
-						control={<Checkbox />}
-						label='Male'
-						disabled={isCheckMale}
-						onChange={handleGender}
-					/>
-				</RadioGroup>
-			</MyForm>
-			{/* </StyledEngineProvider> */}
+			<StyledEngineProvider injectFirst>
+				<MyForm component='fieldset'>
+					<RadioGroup aria-label='gender' name='radio-buttons-group'>
+						<FormControlLabel
+							value='female'
+							control={<Checkbox />}
+							label='Female'
+							onChange={handleGender}
+							disabled={isCheckFemale}
+						/>
+						<FormControlLabel
+							value='male'
+							control={<Checkbox />}
+							label='Male'
+							disabled={isCheckMale}
+							onChange={handleGender}
+						/>
+					</RadioGroup>
+				</MyForm>
+			</StyledEngineProvider>
 		</Wrapper>
 	);
 }

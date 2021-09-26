@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 import { RootState } from '../../app/store';
 import IPatient from '../../types/patientTypes';
 
@@ -59,7 +60,7 @@ export const getPatients = createAsyncThunk('patients/', async (obj: ParamsUrl) 
 
 	const response = await fetch(url)
 		.then((res) => res.json())
-		// .then((patients) => patients.results)
+
 		.then((patients) => patients)
 		.catch((e) => console.log(e));
 
@@ -76,7 +77,12 @@ export const patientSlice = createSlice({
 			const temPatients = state.patients.filter(
 				(patient) => patient.name.first.toLowerCase() === data
 			);
-			state.patients = temPatients;
+			if (temPatients.length === 0) {
+				toast.success('Patient not found');
+				return;
+			} else {
+				state.patients = temPatients;
+			}
 		},
 
 		handleModal: (state, action) => {

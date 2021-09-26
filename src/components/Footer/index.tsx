@@ -1,4 +1,3 @@
-// import { StylesProvider } from '@material-ui/core';
 import { StyledEngineProvider } from '@mui/styled-engine';
 import { Heart, Wrapper } from './styles';
 

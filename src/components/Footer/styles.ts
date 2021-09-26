@@ -6,8 +6,6 @@ export const Wrapper = styled.footer`
 	align-items: center;
 	justify-content: center;
 	grid-area: 'footer';
-	/* position: absolute; */
-	/* position: fixed; */
 
 	bottom: 0;
 	height: 6rem;

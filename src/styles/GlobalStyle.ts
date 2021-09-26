@@ -1,3 +1,4 @@
+import 'react-toastify/dist/ReactToastify.css';
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
@@ -20,15 +21,28 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   
+  
   html {
     font-size: 62.5%;
-
+    
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-        sans-serif;
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+    }
+    
+    body .Toastify .Toastify__toast-container .Toastify__toast--success {
+
+      & .Toastify__progress-bar--success {
+        background-color: #9CA2F4;
+      }
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 1.7rem;
+      svg {
+        fill: var(--purple-logo);
+      }
     }
 
     ul {

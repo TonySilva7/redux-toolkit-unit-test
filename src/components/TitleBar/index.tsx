@@ -1,6 +1,6 @@
-// import { StylesProvider } from '@material-ui/core';
 import { StyledEngineProvider } from '@mui/styled-engine';
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import { People, Wrapper } from './styles';
 
 export default function TitleBar() {
@@ -8,6 +8,7 @@ export default function TitleBar() {
 
 	useEffect(() => {
 		setMargin(-3);
+		toast.success('Welcome!', { position: toast.POSITION.TOP_CENTER });
 	}, []);
 
 	return (

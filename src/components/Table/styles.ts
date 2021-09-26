@@ -30,21 +30,11 @@ export const Wrapper = styled.table`
 				width: auto;
 				&:nth-child(1) {
 					width: 13rem;
-					/* margin-left: 4rem; */
 				}
 
 				&:nth-child(3) {
 					width: 12rem;
 				}
-
-				/*&:nth-child(2) {
-					margin-left: 4rem;
-				}
-
-				&:nth-child(3) {
-					margin-left: 1rem;
-					width: 11rem;
-				}*/
 
 				&:nth-child(5) {
 					width: 11rem;
@@ -63,7 +53,6 @@ export const Wrapper = styled.table`
 				letter-spacing: 0.1rem;
 				text-transform: uppercase;
 				padding: 0.6rem;
-				/* text-align: center; */
 			}
 		}
 	}
@@ -81,7 +70,7 @@ export const Wrapper = styled.table`
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			/* padding: 0.7rem; */
+
 			box-sizing: border-box;
 			transition: all 300ms ease;
 
@@ -110,10 +99,6 @@ export const Wrapper = styled.table`
 
 				&:nth-child(3) {
 					width: 12rem;
-				}
-
-				&:nth-child(4) {
-					/* width: auto; */
 				}
 
 				&:nth-child(5) {

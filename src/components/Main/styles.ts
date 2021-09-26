@@ -73,11 +73,3 @@ export const ReloadButton = styled(Button)`
 		}
 	}
 `;
-
-// export const ReloadIcon = styled(ReplayRoundedIcon)`
-// 	transition: all 300ms ease;
-
-// 	&:hover {
-// 		fill: red;
-// 	}
-// `;

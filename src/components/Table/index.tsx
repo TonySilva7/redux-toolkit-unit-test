@@ -49,7 +49,6 @@ export default function Table() {
 								<MyIconButton
 									color='secondary'
 									aria-label='close window'
-									// onClick={() => handleDetailsClient(user.login.uuid)}
 									onClick={() => handleDetailsClient(i)}
 								>
 									<SearchRoundedIcon />
