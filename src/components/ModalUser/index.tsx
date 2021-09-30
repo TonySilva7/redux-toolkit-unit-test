@@ -29,6 +29,7 @@ export default function ModalUser() {
 					</div>
 					<StyledEngineProvider injectFirst>
 						<MyIconButton
+							id='showOrHide'
 							color='secondary'
 							aria-label='close window'
 							onClick={() => dispatch(handleModal(idPatient))}

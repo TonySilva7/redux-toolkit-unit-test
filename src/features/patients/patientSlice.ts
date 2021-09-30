@@ -1,12 +1,12 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 import { RootState } from '../../app/store';
 import IPatient from '../../types/patientTypes';
 
 export interface PatientState {
 	status: 'ok' | 'loading';
-	showModal: boolean;
-	clientModal: number;
+	showModal: true | false;
+	idPatient: number;
 	patients: IPatient[];
 	info: { seed: string; results: number; page: number; version: string };
 }
@@ -43,10 +43,10 @@ const patientsInitial: IPatient[] = [
 	},
 ];
 
-const initialState: PatientState = {
+export const initialState: PatientState = {
 	status: 'ok',
 	showModal: false,
-	clientModal: 0,
+	idPatient: 0,
 	patients: patientsInitial,
 	info: { seed: '', results: 0, page: 0, version: '' },
 };
@@ -72,7 +72,7 @@ export const patientSlice = createSlice({
 	initialState,
 
 	reducers: {
-		findPatient: (state, action) => {
+		findPatient: (state, action: PayloadAction<string>) => {
 			const data: string = action.payload;
 			const temPatients = state.patients.filter(
 				(patient) => patient.name.first.toLowerCase() === data
@@ -85,9 +85,9 @@ export const patientSlice = createSlice({
 			}
 		},
 
-		handleModal: (state, action) => {
+		handleModal: (state, action: PayloadAction<number>) => {
 			state.showModal = !state.showModal;
-			state.clientModal = action.payload;
+			state.idPatient = action.payload;
 		},
 	},
 
@@ -109,7 +109,7 @@ export const { findPatient, handleModal } = patientSlice.actions;
 export const selectPatients = (state: RootState) => state.patient.patients;
 export const selectInfo = (state: RootState) => state.patient.info.page;
 export const selectShowModal = (state: RootState) => state.patient.showModal;
-export const selectOnlyPatient = (state: RootState) => state.patient.clientModal;
+export const selectOnlyPatient = (state: RootState) => state.patient.idPatient;
 export const selectStatus = (state: RootState) => state.patient.status;
 
 export default patientSlice.reducer;
