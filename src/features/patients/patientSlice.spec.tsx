@@ -7,8 +7,6 @@ let store: ReturnType<typeof createStore>;
 let spy: jest.SpyInstance<any, any>;
 
 describe('patient reducer', () => {
-	// testing handleModal
-	// should return true when handleModal is called with true
 	beforeEach(() => {
 		store = createStore();
 		spy = jest.spyOn(store, 'dispatch');
